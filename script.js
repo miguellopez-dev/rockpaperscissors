@@ -56,11 +56,9 @@ function game() {
 		let playerSelection = prompt('Rock, Paper or Scissors?', 'rock');
 
 		// The computer will randomly select one of the choices.
-		function randomNumber() {
-			return Math.floor(Math.random() * 3);
-		}
+
 		function computerPlay() {
-			return choice[randomNumber()];
+			return choice[Math.floor(Math.random() * 3)];
 		}
 		let computerSelection = computerPlay();
 
