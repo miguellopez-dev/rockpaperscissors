@@ -1,6 +1,8 @@
 const choice = ['rock', 'paper', 'scissors'];
 let answer;
 let playerSelection;
+let playerScore = 0;
+let computerScore = 0;
 
 function playerChoice() {
 	// When a user inputs 'rock', 'paper' or 'scissors'.
@@ -61,6 +63,23 @@ function game() {
 		const computerSelection = computerPlay();
 
 		playRound(playerSelection, computerSelection);
+
+		if (answer.includes('win!')) {
+			playerScore++;
+			console.log(`Score
+Player: ${playerScore} 
+user:${computerScore}`);
+		} else if (answer.includes('lose!')) {
+			console.log(answer.includes('win!'));
+			computerScore++;
+			console.log(`Score 
+Player:${playerScore}
+user:${computerScore}`);
+		} else {
+			console.log(`Score
+Player: ${playerScore} 
+user:${computerScore}`);
+		}
 
 		//Print winner if user loses
 		//otherwise print loser.
