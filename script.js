@@ -1,28 +1,50 @@
 const choice = ['rock', 'paper', 'scissors'];
 let answer;
+let playerSelection;
+
+function player() {
+	// When a user inputs 'rock', 'paper' or 'scissors'.
+	// Hold the choice in a variable.
+	playerSelection = prompt('Rock, Paper or Scissors?', 'Rock').toLowerCase();
+	if (
+		playerSelection == 'rock' ||
+		playerSelection == 'paper' ||
+		playerSelection == 'scissors'
+	) {
+		return playerSelection;
+	} else {
+		alert(`${playerSelection} is not a valid entry. Please try again.`);
+		player();
+	}
+}
 
 // Check to see if users choice beats computers choice.
 function playRound(playerSelection, computerSelection) {
+	let picks = console.log(
+		`Player: ${playerSelection}
+		 
+Computer: ${computerSelection}`
+	);
 	if (playerSelection == computerSelection) {
-		console.log(playerSelection, computerSelection);
+		picks;
 		return (answer = 'It is a tie!!');
 	} else if (playerSelection == 'rock' && computerSelection == 'paper') {
-		console.log(playerSelection, computerSelection);
+		picks;
 		return (answer = 'You lose, paper beats rock');
 	} else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-		console.log(playerSelection, computerSelection);
+		picks;
 		return (answer = 'You win, rock beats scissors');
 	} else if (playerSelection == 'paper' && computerSelection == 'rock') {
-		console.log(playerSelection, computerSelection);
+		picks;
 		return (answer = 'You win, Paper beats rock');
 	} else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-		console.log(playerSelection, computerSelection);
+		picks;
 		return (answer = 'You lose, scissors beats paper');
 	} else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-		console.log(playerSelection, computerSelection);
+		picks;
 		return (answer = 'You lose, rock beats scissors');
 	} else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-		console.log(playerSelection, computerSelection);
+		picks;
 		return (answer = 'You win, scissors beats paper');
 	} else {
 		return (answer = `You entered ${playerSelection}, that is not a valid entry.`);
@@ -31,13 +53,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 	for (i = 0; i < 5; i++) {
-		// When a user inputs 'rock', 'paper' or 'scissors'.
-		// Hold the choice in a variable.
-		let playerSelection = prompt(
-			'Rock, Paper or Scissors?',
-			'Rock'
-		).toLowerCase();
-
+		player();
 		// The computer will randomly select one of the choices.
 		function computerPlay() {
 			return choice[Math.floor(Math.random() * 3)];
