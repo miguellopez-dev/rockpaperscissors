@@ -3,16 +3,18 @@ let answer;
 let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
+function clicked(pick) {
+	return playerChoice(pick);
+}
 
-function playerChoice() {
-	// When a user inputs 'rock', 'paper' or 'scissors'.
-	// Hold the choice in a variable.
-	playerSelection = prompt('Rock, Paper or Scissors?', 'Rock').toLowerCase();
+function playerChoice(rice) {
+	playerSelection = rice;
 	if (
 		playerSelection == 'rock' ||
 		playerSelection == 'paper' ||
 		playerSelection == 'scissors'
 	) {
+		game();
 		return playerSelection;
 	} else {
 		alert(`${playerSelection} is not a valid entry. Please try again.`);
@@ -54,37 +56,32 @@ Computer: ${computerSelection}`
 }
 
 function game() {
-	for (i = 0; i < 5; i++) {
-		playerChoice();
-		// The computer will randomly select one of the choices.
-		function computerPlay() {
-			return choice[Math.floor(Math.random() * 3)];
-		}
-		const computerSelection = computerPlay();
+	// The computer will randomly select one of the choices.
+	function computerPlay() {
+		return choice[Math.floor(Math.random() * 3)];
+	}
+	const computerSelection = computerPlay();
 
-		playRound(playerSelection, computerSelection);
+	playRound(playerSelection, computerSelection);
 
-		if (answer.includes('win!')) {
-			playerScore++;
-			console.log(`Score
+	if (answer.includes('win!')) {
+		playerScore++;
+		console.log(`Score
 Player: ${playerScore} 
 user:${computerScore}`);
-		} else if (answer.includes('lose!')) {
-			console.log(answer.includes('win!'));
-			computerScore++;
-			console.log(`Score 
+	} else if (answer.includes('lose!')) {
+		console.log(answer.includes('win!'));
+		computerScore++;
+		console.log(`Score 
 Player:${playerScore}
 user:${computerScore}`);
-		} else {
-			console.log(`Score
+	} else {
+		console.log(`Score
 Player: ${playerScore} 
 user:${computerScore}`);
-		}
-
-		//Print winner if user loses
-		//otherwise print loser.
-		console.log(answer);
 	}
-}
 
-game();
+	//Print winner if user loses
+	//otherwise print loser.
+	console.log(answer);
+}
