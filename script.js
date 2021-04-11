@@ -3,6 +3,8 @@ let answer;
 let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
+const containerPlayer = document.querySelector('.results__player');
+const containerComp = document.querySelector('.results__computer');
 
 function playerChoice(rice) {
 	playerSelection = rice;
@@ -21,31 +23,42 @@ function playerChoice(rice) {
 
 // Check to see if users choice beats computers choice.
 function playRound(playerSelection, computerSelection) {
-	let picks = console.log(
-		`Player: ${playerSelection}
+	const playerDiv = document.createElement('div');
+	const compDiv = document.createElement('div');
+	playerDiv.classList.add('results__player-pick');
+	compDiv.classList.add('results__computer-pick');
+	playerDiv.textContent = playerSelection;
+	compDiv.textContent = computerSelection;
+	let picksPlayer = containerPlayer.prepend(playerDiv);
+	let picksComp = containerComp.prepend(compDiv);
 
-Computer: ${computerSelection}`
-	);
 	if (playerSelection == computerSelection) {
-		picks;
+		picksPlayer;
+		picksComp;
 		return (answer = 'It is a tie!!');
 	} else if (playerSelection == 'rock' && computerSelection == 'paper') {
-		picks;
+		picksPlayer;
+		picksComp;
 		return (answer = 'You lose! paper beats rock');
 	} else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-		picks;
+		picksPlayer;
+		picksComp;
 		return (answer = 'You win! rock beats scissors');
 	} else if (playerSelection == 'paper' && computerSelection == 'rock') {
-		picks;
+		picksPlayer;
+		picksComp;
 		return (answer = 'You win! Paper beats rock');
 	} else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-		picks;
+		picksPlayer;
+		picksComp;
 		return (answer = 'You lose! scissors beats paper');
 	} else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-		picks;
+		picksPlayer;
+		picksComp;
 		return (answer = 'You lose! rock beats scissors');
 	} else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-		picks;
+		picksPlayer;
+		picksComp;
 		return (answer = 'You win! scissors beats paper');
 	} else {
 		return (answer = `You entered ${playerSelection}, that is not a valid entry.`);
