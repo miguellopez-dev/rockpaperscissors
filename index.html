@@ -7,19 +7,42 @@
 		<title>Rock Paper Scissors</title>
 	</head>
 	<body>
-		<h1>Rock Paper Scissors</h1>
-		<div class="choice rock">
-			<h3>Rock</h3>
-			<button onclick="playerChoice('rock')">Rock</button>
-		</div>
-		<div class="choice paper">
-			<h3>Paper</h3>
-			<button onclick="playerChoice('paper')">Paper</button>
-		</div>
-		<div class="choice scissors">
-			<h3>Scissors</h3>
-			<button onclick="playerChoice('scissors')">Scissors</button>
-		</div>
+		<section>
+			<div class="picks">
+				<h1>Rock Paper Scissors</h1>
+				<div class="picks__choice picks__rock">
+					<h3>Rock</h3>
+					<button onclick="playerChoice('rock')">Rock</button>
+				</div>
+				<div class="picks__choice picks__paper">
+					<h3>Paper</h3>
+					<button onclick="playerChoice('paper')">Paper</button>
+				</div>
+				<div class="picks__choice picks__scissors">
+					<h3>Scissors</h3>
+					<button onclick="playerChoice('scissors')">Scissors</button>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<div class="results">
+				<div class="results__player">
+					<h3>Player</h3>
+					<div class="results__player-pick"></div>
+				</div>
+
+				<div class="results__score">
+					<h2>Score</h2>
+					<p>0</p>
+				</div>
+
+				<div class="results__computer">
+					<h3>Computer</h3>
+					<div class="results__computer-pick"></div>
+				</div>
+			</div>
+		</section>
 
 		<script src="./script.js"></script>
 	</body>
