@@ -3,9 +3,6 @@ let answer;
 let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
-function clicked(pick) {
-	return playerChoice(pick);
-}
 
 function playerChoice(rice) {
 	playerSelection = rice;
