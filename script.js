@@ -3,8 +3,8 @@ let answer;
 let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
-const containerPlayer = document.querySelector('.results__player');
-const containerComp = document.querySelector('.results__computer');
+const containerPlayer = document.querySelector('.results__player-pick');
+const containerComp = document.querySelector('.results__computer-pick');
 
 function playerChoice(rice) {
 	playerSelection = rice;
