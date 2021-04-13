@@ -6,8 +6,11 @@ let computerScore = 0;
 const containerPlayer = document.querySelector('.results__player-pick');
 const containerComp = document.querySelector('.results__computer-pick');
 
-function playerChoice(rice) {
-	playerSelection = rice;
+const containerScorePlayer = document.querySelector('.results__score-player p');
+const containerScoreComp = document.querySelector('.results__score-computer p');
+
+function playerChoice(pick) {
+	playerSelection = pick;
 	if (
 		playerSelection == 'rock' ||
 		playerSelection == 'paper' ||
@@ -76,15 +79,10 @@ function game() {
 
 	if (answer.includes('win!')) {
 		playerScore++;
-		console.log(`Score
-Player: ${playerScore} 
-user:${computerScore}`);
+		containerScorePlayer.innerHTML = playerScore;
 	} else if (answer.includes('lose!')) {
-		console.log(answer.includes('win!'));
 		computerScore++;
-		console.log(`Score 
-Player:${playerScore}
-user:${computerScore}`);
+		containerScoreComp.innerHTML = computerScore;
 	} else {
 		console.log(`Score
 Player: ${playerScore} 
