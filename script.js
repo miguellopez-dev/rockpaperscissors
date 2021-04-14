@@ -9,6 +9,8 @@ const containerComp = document.querySelector('.results__computer-pick');
 const containerScorePlayer = document.querySelector('.results__score-player p');
 const containerScoreComp = document.querySelector('.results__score-computer p');
 
+const containerPicks = document.querySelector('.results__picks');
+
 function playerChoice(pick) {
 	playerSelection = pick;
 	if (
@@ -28,41 +30,44 @@ function playerChoice(pick) {
 function playRound(playerSelection, computerSelection) {
 	const playerDiv = document.createElement('div');
 	const compDiv = document.createElement('div');
+	const pickDiv = document.createElement('div');
+
 	playerDiv.classList.add('results__player-pick');
 	compDiv.classList.add('results__computer-pick');
 	playerDiv.textContent = playerSelection;
 	compDiv.textContent = computerSelection;
 	let picksPlayer = containerPlayer.prepend(playerDiv);
 	let picksComp = containerComp.prepend(compDiv);
+	containerPicks.append(pickDiv);
 
 	if (playerSelection == computerSelection) {
 		picksPlayer;
 		picksComp;
-		return (answer = 'It is a tie!!');
+		return (answer = pickDiv.textContent = 'It is a tie!!');
 	} else if (playerSelection == 'rock' && computerSelection == 'paper') {
 		picksPlayer;
 		picksComp;
-		return (answer = 'You lose! paper beats rock');
+		return (answer = pickDiv.textContent = 'You lose! paper beats rock');
 	} else if (playerSelection == 'rock' && computerSelection == 'scissors') {
 		picksPlayer;
 		picksComp;
-		return (answer = 'You win! rock beats scissors');
+		return (answer = pickDiv.textContent = 'You win! rock beats scissors');
 	} else if (playerSelection == 'paper' && computerSelection == 'rock') {
 		picksPlayer;
 		picksComp;
-		return (answer = 'You win! Paper beats rock');
+		return (answer = pickDiv.textContent = 'You win! Paper beats rock');
 	} else if (playerSelection == 'paper' && computerSelection == 'scissors') {
 		picksPlayer;
 		picksComp;
-		return (answer = 'You lose! scissors beats paper');
+		return (answer = pickDiv.textContent = 'You lose! scissors beats paper');
 	} else if (playerSelection == 'scissors' && computerSelection == 'rock') {
 		picksPlayer;
 		picksComp;
-		return (answer = 'You lose! rock beats scissors');
+		return (answer = pickDiv.textContent = 'You lose! rock beats scissors');
 	} else if (playerSelection == 'scissors' && computerSelection == 'paper') {
 		picksPlayer;
 		picksComp;
-		return (answer = 'You win! scissors beats paper');
+		return (answer = pickDiv.textContent = 'You win! scissors beats paper');
 	} else {
 		return (answer = `You entered ${playerSelection}, that is not a valid entry.`);
 	}
