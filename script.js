@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
 	compDiv.textContent = computerSelection;
 	let picksPlayer = containerPlayer.prepend(playerDiv);
 	let picksComp = containerComp.prepend(compDiv);
-	containerPicks.append(pickDiv);
+	containerPicks.prepend(pickDiv);
 
 	if (playerSelection == computerSelection) {
 		picksPlayer;
@@ -96,5 +96,4 @@ user:${computerScore}`);
 
 	//Print winner if user loses
 	//otherwise print loser.
-	console.log(answer);
 }
