@@ -13,24 +13,24 @@
 	</head>
 	<body>
 		<section>
+			<h1>Rock Paper Scissors</h1>
 			<div class="picks">
-				<h1>Rock Paper Scissors</h1>
 				<div class="picks__choice picks__rock">
 					<h3>Rock</h3>
 					<button onclick="playerChoice('rock')">
-						Rock <i class="far fa-hand-rock"></i>
+						<i class="far fa-hand-rock icon"></i>
 					</button>
 				</div>
 				<div class="picks__choice picks__paper">
 					<h3>Paper</h3>
 					<button onclick="playerChoice('paper')">
-						Paper<i class="far fa-hand-paper"></i>
+						<i class="far fa-hand-paper icon"></i>
 					</button>
 				</div>
 				<div class="picks__choice picks__scissors">
 					<h3>Scissors</h3>
 					<button onclick="playerChoice('scissors')">
-						Scissors<i class="far fa-hand-scissors"></i>
+						<i class="far fa-hand-scissors icon"></i>
 					</button>
 				</div>
 			</div>
@@ -39,19 +39,21 @@
 		<section>
 			<div class="results">
 				<div class="results__player">
-					<h3>Player</h3>
+					<h2>Player</h2>
 					<div class="results__player-pick"></div>
 				</div>
 
 				<div class="results__score">
 					<h2>Score</h2>
-					<div class="results__score-player"><p>0</p></div>
-					<div class="results__score-computer"><p>0</p></div>
+					<div class="results__score-container">
+						<div class="results__score-player"><p>0</p></div>
+						<div class="results__score-computer"><p>0</p></div>
+					</div>
 					<div class="results__picks"></div>
 				</div>
 
 				<div class="results__computer">
-					<h3>Computer</h3>
+					<h2>Computer</h2>
 					<div class="results__computer-pick"></div>
 				</div>
 			</div>
