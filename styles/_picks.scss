@@ -1,0 +1,22 @@
+.picks {
+	margin: 3rem auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
+}
+
+.picks__choice {
+	& button {
+		margin: 2rem;
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+		border: none;
+		background-color: var(--main-background-color);
+		& .icon {
+			font-size: 2rem;
+			color: var(--light-dark-blue);
+		}
+	}
+}

@@ -1,0 +1,32 @@
+@import '_picks';
+@import '_results';
+
+:root {
+	--main-background-color: #80c8f18c;
+	--main-dark-color: #202020;
+	--light-gray: #707070;
+	--dark-gray: #3f3f3f;
+	--light-blue: #4da8da;
+	--light-dark-blue: #007cc7;
+}
+
+*::before,
+*::after,
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--main-background-color);
+	text-align: center;
+	font-size: 2rem;
+}
+
+h1 {
+	font-size: 4rem;
+}
