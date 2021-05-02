@@ -4,17 +4,3 @@
 	width: 80%;
 	margin: 10rem auto;
 }
-
-.results__score {
-	width: 25%;
-	&-container {
-		display: flex;
-		justify-content: space-between;
-		margin: 2rem 0;
-	}
-	&-player,
-	&-computer {
-		border: 2px solid var(--dark-gray);
-		padding: 1rem;
-	}
-}
