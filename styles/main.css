@@ -1,3 +1,23 @@
+.score {
+  width: 25%;
+  margin: 3rem auto 5rem;
+}
+
+.score__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.score__player, .score__computer {
+  border: 2px solid var(--dark-gray);
+  padding: 1rem;
+}
+
 .picks {
   margin: 3rem auto;
   display: -webkit-box;
@@ -35,27 +55,6 @@
           justify-content: space-between;
   width: 80%;
   margin: 10rem auto;
-}
-
-.results__score {
-  width: 30%;
-  border: 3px solid var(--light-blue);
-  padding: 2rem;
-}
-
-.results__score-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 2rem 0;
-}
-
-.results__score-player, .results__score-computer {
-  border: 2px solid var(--dark-gray);
-  padding: 1rem;
 }
 
 :root {
