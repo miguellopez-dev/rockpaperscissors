@@ -6,10 +6,10 @@ let computerScore = 0;
 const containerPlayer = document.querySelector('.results__player-pick');
 const containerComp = document.querySelector('.results__computer-pick');
 
-const containerScorePlayer = document.querySelector('.results__score-player p');
-const containerScoreComp = document.querySelector('.results__score-computer p');
+const containerScorePlayer = document.querySelector('.score__player p');
+const containerScoreComp = document.querySelector('.score__computer p');
 
-const containerPicks = document.querySelector('.results__picks');
+const containerPicks = document.querySelector('.results__picks-outcome');
 
 function playerChoice(pick) {
 	playerSelection = pick;
