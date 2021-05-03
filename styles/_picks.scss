@@ -19,20 +19,25 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 80%;
+	width: 40%;
 }
 
 .picks__choice {
 	& button {
+		cursor: pointer;
 		margin: 2rem;
-		width: 6rem;
-		height: 6rem;
+		width: 8rem;
+		height: 8rem;
 		border-radius: 50%;
 		border: none;
 		background-color: var(--main-background-color);
+		transition: transform 0.2s ease-in-out;
+		&:hover {
+			transform: scale(1.2);
+		}
 		& .icon {
 			font-size: 2rem;
-			color: var(--light-dark-blue);
+			color: var(--dark-gray);
 		}
 	}
 }
