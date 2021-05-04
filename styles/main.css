@@ -29,21 +29,36 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 80%;
+  width: 40%;
 }
 
 .picks__choice button {
+  cursor: pointer;
   margin: 2rem;
-  width: 6rem;
-  height: 6rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
-  border: none;
+  border: solid 1px var(--dark-gray);
   background-color: var(--main-background-color);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.picks__choice button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 0 2px 1px var(--dark-gray);
+          box-shadow: 0 0 2px 1px var(--dark-gray);
+}
+
+.picks__choice button:active {
+  -webkit-box-shadow: 0 0 2px 3px var(--light-gray);
+          box-shadow: 0 0 2px 3px var(--light-gray);
 }
 
 .picks__choice button .icon {
   font-size: 2rem;
-  color: var(--light-dark-blue);
+  color: var(--dark-gray);
 }
 
 .results {
