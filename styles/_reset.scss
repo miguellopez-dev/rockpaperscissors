@@ -6,6 +6,11 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: #ffffff98;
+	transition: all ease-in-out 2s;
+}
+.start {
+	display: none;
+	opacity: 0;
 }
 .reset__container {
 	position: absolute;
@@ -36,5 +41,23 @@
 		&:hover {
 			background-color: var(--light-dark-blue);
 		}
+	}
+}
+
+.reset__fade-in {
+	animation: fadeIn linear 0.5s forwards;
+}
+
+@keyframes fadeIn {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	5% {
+		display: initial;
+		opacity: 1;
+	}
+	100% {
+		opacity: 100%;
 	}
 }

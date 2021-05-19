@@ -11,19 +11,14 @@ const containerScoreComp = document.querySelector('.score__computer p');
 
 const containerPicks = document.querySelector('.results__picks-outcome');
 
+const resetYes = document.querySelector('.reset__choice-yes');
+const resetContainer = document.querySelector('.reset');
+
 function playerChoice(pick) {
 	playerSelection = pick;
-	if (
-		playerSelection == 'rock' ||
-		playerSelection == 'paper' ||
-		playerSelection == 'scissors'
-	) {
-		game();
-		return playerSelection;
-	} else {
-		alert(`${playerSelection} is not a valid entry. Please try again.`);
-		playerChoice();
-	}
+
+	game();
+	return playerSelection;
 }
 
 // Check to see if users choice beats computers choice.
@@ -88,12 +83,26 @@ function game() {
 	} else if (answer.includes('lose!')) {
 		computerScore++;
 		containerScoreComp.innerHTML = computerScore;
-	} else {
-		console.log(`Score
-Player: ${playerScore} 
-user:${computerScore}`);
+	}
+	console.log(playerScore, computerScore);
+	if (playerScore >= 5 || computerScore >= 5) {
+		resetContainer.classList.add('reset__fade-in');
+		resetContainer.classList.remove('start');
 	}
 
 	//Print winner if user loses
 	//otherwise print loser.
 }
+function reset() {
+	playerScore = 0;
+	computerScore = 0;
+	containerScorePlayer.innerHTML = playerScore;
+	containerScoreComp.innerHTML = computerScore;
+	containerPicks.innerHTML = '';
+	containerPlayer.innerHTML = '';
+	containerComp.innerHTML = '';
+	resetContainer.classList.remove('reset__fade-in');
+	resetContainer.classList.add('start');
+}
+
+resetYes.addEventListener('click', reset);
