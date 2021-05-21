@@ -13,6 +13,7 @@ const containerPicks = document.querySelector('.results__picks-outcome');
 
 const resetYes = document.querySelector('.reset__choice-yes');
 const resetContainer = document.querySelector('.reset');
+const resetResult = document.querySelector('.reset__content h2');
 
 function playerChoice(pick) {
 	playerSelection = pick;
@@ -84,10 +85,24 @@ function game() {
 		computerScore++;
 		containerScoreComp.innerHTML = computerScore;
 	}
-	console.log(playerScore, computerScore);
-	if (playerScore >= 5 || computerScore >= 5) {
+
+	if (playerScore >= 5) {
 		resetContainer.classList.add('reset__fade-in');
-		resetContainer.classList.remove('start');
+		if (resetContainer.classList.contains('start')) {
+			resetContainer.classList.remove('start');
+		} else {
+			resetContainer.classList.remove('reset__fade-out');
+		}
+		resetResult.textContent = 'You Win!';
+	} else if (computerScore >= 5) {
+		resetContainer.classList.add('reset__fade-in');
+		if (resetContainer.classList.contains('start')) {
+			resetContainer.classList.remove('start');
+		} else {
+			resetContainer.classList.remove('reset__fade-out');
+		}
+
+		resetResult.textContent = 'You Lose!';
 	}
 
 	//Print winner if user loses
@@ -102,7 +117,7 @@ function reset() {
 	containerPlayer.innerHTML = '';
 	containerComp.innerHTML = '';
 	resetContainer.classList.remove('reset__fade-in');
-	resetContainer.classList.add('start');
+	resetContainer.classList.add('reset__fade-out');
 }
 
 resetYes.addEventListener('click', reset);
