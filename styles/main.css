@@ -29,7 +29,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 40%;
+  width: 50%;
+}
+
+@media screen and (max-width: 650px) {
+  .picks {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 60%;
+  }
+  .picks__choice:last-child {
+    margin: auto;
+  }
 }
 
 .picks__choice button {
@@ -72,6 +83,36 @@
   margin: 10rem auto;
 }
 
+@media screen and (max-width: 710px) {
+  .results {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+  }
+  .results__player {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 220px;
+            flex: 1 1 220px;
+  }
+  .results__computer {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 220px;
+            flex: 1 1 220px;
+  }
+  .results__picks-outcome {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    margin: 5rem auto;
+  }
+}
+
 .reset {
   position: fixed;
   left: 0;
@@ -96,6 +137,12 @@
   background-color: #ffffff;
   padding: 10rem;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 655px) {
+  .reset__container {
+    padding: 3rem;
+  }
 }
 
 .reset__content h3 {
