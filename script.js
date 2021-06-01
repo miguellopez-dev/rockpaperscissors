@@ -15,6 +15,7 @@ const resetYes = document.querySelector('.reset__choice-yes');
 const resetContainer = document.querySelector('.reset');
 const resetResult = document.querySelector('.reset__content h2');
 
+//Player takes their pick
 function playerChoice(pick) {
 	playerSelection = pick;
 
@@ -22,50 +23,50 @@ function playerChoice(pick) {
 	return playerSelection;
 }
 
-// Check to see if users choice beats computers choice.
-function playRound(playerSelection, computerSelection) {
+function playRound(player, computer) {
+	// Adds classes and content to divs when a round is played
 	const playerDiv = document.createElement('div');
 	const compDiv = document.createElement('div');
 	const pickDiv = document.createElement('div');
 
 	playerDiv.classList.add('results__player-pick');
 	compDiv.classList.add('results__computer-pick');
-	playerDiv.textContent = playerSelection;
-	compDiv.textContent = computerSelection;
+	playerDiv.textContent = player;
+	compDiv.textContent = computer;
 	let picksPlayer = containerPlayer.prepend(playerDiv);
 	let picksComp = containerComp.prepend(compDiv);
 	containerPicks.prepend(pickDiv);
 
-	if (playerSelection == computerSelection) {
+	if (player == computer) {
 		picksPlayer;
 		picksComp;
 		return (answer = pickDiv.textContent = 'It is a tie!!');
-	} else if (playerSelection == 'rock' && computerSelection == 'paper') {
+	} else if (player == 'rock' && computer == 'paper') {
 		picksPlayer;
 		picksComp;
 		return (answer = pickDiv.textContent = 'You lose! paper beats rock');
-	} else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+	} else if (player == 'rock' && computer == 'scissors') {
 		picksPlayer;
 		picksComp;
 		return (answer = pickDiv.textContent = 'You win! rock beats scissors');
-	} else if (playerSelection == 'paper' && computerSelection == 'rock') {
+	} else if (player == 'paper' && computer == 'rock') {
 		picksPlayer;
 		picksComp;
 		return (answer = pickDiv.textContent = 'You win! Paper beats rock');
-	} else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+	} else if (player == 'paper' && computer == 'scissors') {
 		picksPlayer;
 		picksComp;
 		return (answer = pickDiv.textContent = 'You lose! scissors beats paper');
-	} else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+	} else if (player == 'scissors' && computer == 'rock') {
 		picksPlayer;
 		picksComp;
 		return (answer = pickDiv.textContent = 'You lose! rock beats scissors');
-	} else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+	} else if (player == 'scissors' && computer == 'paper') {
 		picksPlayer;
 		picksComp;
 		return (answer = pickDiv.textContent = 'You win! scissors beats paper');
 	} else {
-		return (answer = `You entered ${playerSelection}, that is not a valid entry.`);
+		return (answer = `You entered ${player}, that is not a valid entry.`);
 	}
 }
 
@@ -85,7 +86,7 @@ function game() {
 		computerScore++;
 		containerScoreComp.innerHTML = computerScore;
 	}
-
+	// if player reaches 5 points banner pops up and prevents clicking any where else
 	if (playerScore >= 5) {
 		resetContainer.classList.add('reset__fade-in');
 		if (resetContainer.classList.contains('start')) {
@@ -94,6 +95,7 @@ function game() {
 			resetContainer.classList.remove('reset__fade-out');
 		}
 		resetResult.textContent = 'You Win!';
+		// if computer reaches 5 points banner pops up and prevents clicking any where else
 	} else if (computerScore >= 5) {
 		resetContainer.classList.add('reset__fade-in');
 		if (resetContainer.classList.contains('start')) {
@@ -104,10 +106,9 @@ function game() {
 
 		resetResult.textContent = 'You Lose!';
 	}
-
-	//Print winner if user loses
-	//otherwise print loser.
 }
+
+// Reset all info and removes reset banner
 function reset() {
 	playerScore = 0;
 	computerScore = 0;
