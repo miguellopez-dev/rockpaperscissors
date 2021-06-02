@@ -4,17 +4,17 @@
 	width: 80%;
 	margin: 10rem auto;
 
-	@media screen and (max-width: 710px) {
+	@media screen and (max-width: 645px) {
 		flex-wrap: wrap;
 		width: 100%;
 
 		&__player {
 			order: 1;
-			flex: 1 1 220px;
+			flex: 1 1 205px;
 		}
 		&__computer {
 			order: 2;
-			flex: 1 1 220px;
+			flex: 1 1 205px;
 		}
 		&__picks-outcome {
 			order: 3;
