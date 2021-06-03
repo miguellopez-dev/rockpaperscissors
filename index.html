@@ -12,60 +12,62 @@
 		<title>Rock Paper Scissors by Miguel Lopez</title>
 	</head>
 	<body>
-		<div class="reset start">
-			<div class="reset__container">
-				<div class="reset__content">
-					<h2>You win!</h2>
-					<h3>Restart Game?</h3>
-					<div class="reset__choice">
-						<a class="reset__choice-yes">Yes</a>
+		<div class="main-container">
+			<div class="reset start">
+				<div class="reset__container">
+					<div class="reset__content">
+						<h2>You win!</h2>
+						<h3>Restart Game?</h3>
+						<div class="reset__choice">
+							<a class="reset__choice-yes">Yes</a>
+						</div>
 					</div>
 				</div>
 			</div>
+			<section>
+				<h1>Rock Paper Scissors</h1>
+				<div class="score">
+					<h2>Score</h2>
+					<div class="score__container">
+						<div class="score__player"><p>0</p></div>
+						<div class="score__computer"><p>0</p></div>
+					</div>
+				</div>
+				<div class="picks">
+					<div class="picks__choice picks__rock">
+						<button onclick="playerChoice('rock')">
+							<i class="far fa-hand-rock icon"></i>
+						</button>
+					</div>
+					<div class="picks__choice picks__paper">
+						<button onclick="playerChoice('paper')">
+							<i class="far fa-hand-paper icon"></i>
+						</button>
+					</div>
+					<div class="picks__choice picks__scissors">
+						<button onclick="playerChoice('scissors')">
+							<i class="far fa-hand-scissors icon"></i>
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="results">
+					<div class="results__player">
+						<h2>Player</h2>
+						<div class="results__player-pick"></div>
+					</div>
+
+					<div class="results__picks-outcome"></div>
+
+					<div class="results__computer">
+						<h2>Computer</h2>
+						<div class="results__computer-pick"></div>
+					</div>
+				</div>
+			</section>
 		</div>
-		<section>
-			<h1>Rock Paper Scissors</h1>
-			<div class="score">
-				<h2>Score</h2>
-				<div class="score__container">
-					<div class="score__player"><p>0</p></div>
-					<div class="score__computer"><p>0</p></div>
-				</div>
-			</div>
-			<div class="picks">
-				<div class="picks__choice picks__rock">
-					<button onclick="playerChoice('rock')">
-						<i class="far fa-hand-rock icon"></i>
-					</button>
-				</div>
-				<div class="picks__choice picks__paper">
-					<button onclick="playerChoice('paper')">
-						<i class="far fa-hand-paper icon"></i>
-					</button>
-				</div>
-				<div class="picks__choice picks__scissors">
-					<button onclick="playerChoice('scissors')">
-						<i class="far fa-hand-scissors icon"></i>
-					</button>
-				</div>
-			</div>
-		</section>
-
-		<section>
-			<div class="results">
-				<div class="results__player">
-					<h2>Player</h2>
-					<div class="results__player-pick"></div>
-				</div>
-
-				<div class="results__picks-outcome"></div>
-
-				<div class="results__computer">
-					<h2>Computer</h2>
-					<div class="results__computer-pick"></div>
-				</div>
-			</div>
-		</section>
 
 		<script src="./script.js"></script>
 	</body>
