@@ -3,7 +3,7 @@
 @import '_reset';
 
 :root {
-	--main-background-color: #80c8f18c;
+	--main-background-color: #e5e5e58c;
 	--main-dark-color: #202020;
 	--light-gray: #acaaaa;
 	--dark-gray: #707070;
@@ -26,12 +26,28 @@ html {
 body {
 	background-color: var(--main-background-color);
 	text-align: center;
+	font-family: 'Comfortaa', cursive;
 	font-size: 2rem;
 }
 
 h1 {
 	font-size: 4rem;
+	font-weight: 700;
 	margin-top: 3rem;
+	letter-spacing: .5rem;
+}
+
+.title{ 
+	
+	&__rock {
+		color: #ff52ab;
+	}
+	&__paper {
+		color: #fbbc00;
+	}
+	&__scissors {
+		color: #04cae4;
+	}
 }
 
 @media screen and (min-width: 1000px) {

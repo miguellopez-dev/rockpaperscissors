@@ -172,7 +172,7 @@
   }
 }
 :root {
-  --main-background-color: #b8babb8c;
+  --main-background-color: #e5e5e58c;
   --main-dark-color: #202020;
   --light-gray: #acaaaa;
   --dark-gray: #707070;
@@ -196,12 +196,25 @@ html {
 body {
   background-color: var(--main-background-color);
   text-align: center;
+  font-family: "Comfortaa", cursive;
   font-size: 2rem;
 }
 
 h1 {
   font-size: 4rem;
+  font-weight: 700;
   margin-top: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+.title__rock {
+  color: #ff52ab;
+}
+.title__paper {
+  color: #fbbc00;
+}
+.title__scissors {
+  color: #04cae4;
 }
 
 @media screen and (min-width: 1000px) {
