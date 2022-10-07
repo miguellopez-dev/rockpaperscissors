@@ -8,7 +8,10 @@
 			src="https://kit.fontawesome.com/d1a492490e.js"
 			crossorigin="anonymous"
 		></script>
-		<link rel="stylesheet" href="./styles/main.css" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet"> 
 		<title>Rock Paper Scissors by Miguel Lopez</title>
 	</head>
 	<body>
@@ -25,7 +28,7 @@
 				</div>
 			</div>
 			<section>
-				<h1>Rock Paper Scissors</h1>
+				<h1><span class="title__rock">Rock</span> <span class="title__paper">Paper</span> <span class="title__scissors">Scissors</span></h1>
 				<div class="score">
 					<h2>Score</h2>
 					<div class="score__container">
@@ -35,19 +38,13 @@
 				</div>
 				<div class="picks">
 					<div class="picks__choice picks__rock">
-						<button onclick="playerChoice('rock')">
-							<i class="far fa-hand-rock icon"></i>
-						</button>
+						<img src="/assets/images/rock.png" alt="smiling rock" width="150">
 					</div>
 					<div class="picks__choice picks__paper">
-						<button onclick="playerChoice('paper')">
-							<i class="far fa-hand-paper icon"></i>
-						</button>
+						<img src="/assets/images/paper.png" alt="smiling paper" width="150">
 					</div>
 					<div class="picks__choice picks__scissors">
-						<button onclick="playerChoice('scissors')">
-							<i class="far fa-hand-scissors icon"></i>
-						</button>
+						<img src="/assets/images/scissors.png" alt="smiling blue scissors" width="150">
 					</div>
 				</div>
 			</section>
@@ -68,6 +65,10 @@
 				</div>
 			</section>
 		</div>
+
+		<footer>
+			<p style="font-size: .8rem;">images by <a href="https://www.vecteezy.com/free-vector/cute-scissors" target="_blank">Vecteezy</a></p>
+		</footer>
 
 		<script src="./script.js"></script>
 	</body>
