@@ -5,10 +5,12 @@
 :root {
 	--main-background-color: #e5e5e58c;
 	--main-dark-color: #202020;
-	--light-gray: #acaaaa;
+	--light-gray: #dedede;
 	--dark-gray: #707070;
-	--light-blue: #4da8da;
-	--light-dark-blue: #007cc7;
+	--title-pink: #ff52ab;
+	--title-gold: #fbbc00;
+	--title-blue: #04cae4;
+	--dark-purple: #9a0f9a;
 }
 
 *::before,
@@ -40,13 +42,13 @@ h1 {
 .title{ 
 	
 	&__rock {
-		color: #ff52ab;
+		color: var(--title-pink);
 	}
 	&__paper {
-		color: #fbbc00;
+		color: var(--title-gold);
 	}
 	&__scissors {
-		color: #04cae4;
+		color: var(--title-blue);
 	}
 }
 

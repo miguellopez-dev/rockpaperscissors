@@ -57,29 +57,15 @@
   color: var(--dark-gray);
 }
 
-.results {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin: 10rem auto;
+.dialouge {
+  width: 30%;
+  margin: 5rem auto 0;
 }
-@media screen and (max-width: 645px) {
-  .results {
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  .results__player {
-    order: 1;
-    flex: 1 1 185px;
-  }
-  .results__computer {
-    order: 2;
-    flex: 1 1 190px;
-  }
-  .results__picks-outcome {
-    order: 3;
-    margin: 5rem auto;
-  }
+.dialouge__box {
+  background-color: var(--dark-purple);
+  border-radius: 10px;
+  color: var(--light-gray);
+  padding: 15px 10px;
 }
 
 .reset {
@@ -174,10 +160,12 @@
 :root {
   --main-background-color: #e5e5e58c;
   --main-dark-color: #202020;
-  --light-gray: #acaaaa;
+  --light-gray: #dedede;
   --dark-gray: #707070;
-  --light-blue: #4da8da;
-  --light-dark-blue: #007cc7;
+  --title-pink: #ff52ab;
+  --title-gold: #fbbc00;
+  --title-blue: #04cae4;
+  --dark-purple: #9a0f9a;
 }
 
 *::before,
@@ -208,13 +196,13 @@ h1 {
 }
 
 .title__rock {
-  color: #ff52ab;
+  color: var(--title-pink);
 }
 .title__paper {
-  color: #fbbc00;
+  color: var(--title-gold);
 }
 .title__scissors {
-  color: #04cae4;
+  color: var(--title-blue);
 }
 
 @media screen and (min-width: 1000px) {
