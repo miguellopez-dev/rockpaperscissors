@@ -1,77 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script
-			src="https://kit.fontawesome.com/d1a492490e.js"
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="./assets/css/main.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet"> 
-		<title>Rock Paper Scissors by Miguel Lopez</title>
-	</head>
-	<body>
-		<div class="main-container">
-			<div class="reset start">
-				<div class="reset__container">
-					<div class="reset__content">
-						<h2>You win!</h2>
-						<h3>Restart Game?</h3>
-						<div class="reset__choice">
-							<a class="reset__choice-yes">Yes</a>
-						</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://kit.fontawesome.com/d1a492490e.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./assets/css/main.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+	<title>Rock Paper Scissors by Miguel Lopez</title>
+</head>
+
+<body>
+	<div class="main-container">
+		<div class="reset start">
+			<div class="reset__container">
+				<div class="reset__content">
+					<h2>You win!</h2>
+					<h3>Restart Game?</h3>
+					<div class="reset__choice">
+						<a class="reset__choice-yes">Yes</a>
 					</div>
 				</div>
 			</div>
-			<section>
-				<h1><span class="title__rock">Rock</span> <span class="title__paper">Paper</span> <span class="title__scissors">Scissors</span></h1>
-				
-				<div class="picks">
-					<div class="picks__choice picks__rock">
-						<img src="./assets/images/rock.png" alt="smiling rock" width="150">
-					</div>
-					<div class="picks__choice picks__paper">
-						<img src="./assets/images/paper.png" alt="smiling paper" width="150">
-					</div>
-					<div class="picks__choice picks__scissors">
-						<img src="./assets/images/scissors.png" alt="smiling blue scissors" width="150">
-					</div>
-				</div>
-			</section>
-
-			<section>
-				<div class="score">
-					<h2>Score</h2>
-					<div class="score__container">
-						<div class="score__player"><p>0</p></div>
-						<div class="score__computer"><p>0</p></div>
-					</div>
-				</div>
-			<section>
-				<div class="results">
-					<div class="results__player">
-						<h2>Player</h2>
-						<div class="results__player-pick"></div>
-					</div>
-
-					<div class="results__picks-outcome"></div>
-
-					<div class="results__computer">
-						<h2>Computer</h2>
-						<div class="results__computer-pick"></div>
-					</div>
-				</div>
-			</section>
 		</div>
 
-		<footer>
-			<p style="font-size: .8rem;">images by <a href="https://www.vecteezy.com/free-vector/cute-scissors" target="_blank">Vecteezy</a></p>
-		</footer>
+		<header>
+			<h1><span class="title__rock">Rock</span> <span class="title__paper">Paper</span> <span
+					class="title__scissors">Scissors</span></h1>
+		</header>
+		<main>
+			<div class="picks">
+				<div class="picks__choice picks__rock">
+					<img src="./assets/images/rock.png" alt="smiling rock" width="150">
+				</div>
+				<div class="picks__choice picks__paper">
+					<img src="./assets/images/paper.png" alt="smiling paper" width="150">
+				</div>
+				<div class="picks__choice picks__scissors">
+					<img src="./assets/images/scissors.png" alt="smiling blue scissors" width="150">
+				</div>
+			</div>
+		</main>
 
-		<script src="./script.js"></script>
-	</body>
+
+		<section>
+			<div class="score">
+				<h2>Score</h2>
+				<div class="score__container">
+					<div class="score__player">
+						<p>0</p>
+					</div>
+					<div class="score__computer">
+						<p>0</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="results">
+				<div class="results__player">
+					<h2>Player</h2>
+					<div class="results__player-pick"></div>
+				</div>
+
+				<div class="results__picks-outcome"></div>
+
+				<div class="results__computer">
+					<h2>Computer</h2>
+					<div class="results__computer-pick"></div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<footer>
+		<p style="font-size: .8rem;">images by <a href="https://www.vecteezy.com/free-vector/cute-scissors"
+				target="_blank">Vecteezy</a></p>
+	</footer>
+
+	<script src="./script.js"></script>
+</body>
+
 </html>
