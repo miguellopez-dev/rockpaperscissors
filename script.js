@@ -1,80 +1,72 @@
-const choice = ['rock', 'paper', 'scissors'];
-let answer;
-let playerSelection;
-let playerScore = 0;
-let computerScore = 0;
-const containerPlayer = document.querySelector('.results__player-pick');
-const containerComp = document.querySelector('.results__computer-pick');
-
-const containerScorePlayer = document.querySelector('.score__player p');
-const containerScoreComp = document.querySelector('.score__computer p');
-
-const containerPicks = document.querySelector('.results__picks-outcome');
+let PLAYER_SCORE = 0;
+let COMPUTER_SCORE = 0;
 
 const resetYes = document.querySelector('.reset__choice-yes');
 const resetContainer = document.querySelector('.reset');
 const resetResult = document.querySelector('.reset__content h2');
 
 //Player takes their pick
-function playerChoice(pick) {
-	playerSelection = pick;
-
-	game();
-	return playerSelection;
+function display(text){ 
+	document.querySelector('.dialouge__box p').innerHTML = text;
 }
 
-function playRound(player, computer) {
-	// Adds classes and content to divs when a round is played
-	const playerDiv = document.createElement('div');
-	const compDiv = document.createElement('div');
-	const pickDiv = document.createElement('div');
+const picks = document.querySelectorAll('.picks__choice');
+picks.forEach((element) => {
+	element.addEventListener('click', () => {
+		let playerChoice = element.classList[1]; 
+		display(`You chose ${playerChoice}!`)
+		setTimeout(() => {
+			display('Computer is choosing...')
+		}, 1000);
+		computerPlay(playerChoice);
+	});
+});
 
-	playerDiv.classList.add('results__player-pick');
-	compDiv.classList.add('results__computer-pick');
-	playerDiv.textContent = player;
-	compDiv.textContent = computer;
-	let picksPlayer = containerPlayer.prepend(playerDiv);
-	let picksComp = containerComp.prepend(compDiv);
-	containerPicks.prepend(pickDiv);
+function computerPlay(playerChoice) {
+	const choice = ['rock', 'paper', 'scissors'];
+	const computerChoice = choice[Math.floor(Math.random() * 3)];
+	setTimeout(() => {
+		display(`Computer chose ${computerChoice}!`)
+	}, 1866);
+	playRound(playerChoice, computerChoice)
+}
 
-	if (player == computer) {
-		picksPlayer;
-		picksComp;
-		return (answer = pickDiv.textContent = 'It is a tie!!');
-	} else if (player == 'rock' && computer == 'paper') {
-		picksPlayer;
-		picksComp;
-		return (answer = pickDiv.textContent = 'You lose! paper beats rock');
-	} else if (player == 'rock' && computer == 'scissors') {
-		picksPlayer;
-		picksComp;
-		return (answer = pickDiv.textContent = 'You win! rock beats scissors');
-	} else if (player == 'paper' && computer == 'rock') {
-		picksPlayer;
-		picksComp;
-		return (answer = pickDiv.textContent = 'You win! Paper beats rock');
-	} else if (player == 'paper' && computer == 'scissors') {
-		picksPlayer;
-		picksComp;
-		return (answer = pickDiv.textContent = 'You lose! scissors beats paper');
-	} else if (player == 'scissors' && computer == 'rock') {
-		picksPlayer;
-		picksComp;
-		return (answer = pickDiv.textContent = 'You lose! rock beats scissors');
-	} else if (player == 'scissors' && computer == 'paper') {
-		picksPlayer;
-		picksComp;
-		return (answer = pickDiv.textContent = 'You win! scissors beats paper');
-	} else {
-		return (answer = `You entered ${player}, that is not a valid entry.`);
+function playRound(playerChoice, computerChoice){
+	setTimeout(() => {
+		if (playerChoice === computerChoice){
+			display(`It's a tie!`);
+		}else if(playerChoice === 'rock' && computerChoice === 'scissors'
+			|| playerChoice === 'scissors' && computerChoice === 'paper'
+			|| playerChoice === 'paper' && computerChoice === 'rock'){
+				display('You Win!');
+				scorePlayer();
+				
+		} else {
+			display('Computer Wins!');
+			scoreComputer();
+		}
+	}, 2780);
+	
+	if(PLAYER_SCORE === 5 || COMPUTER_SCORE === 5){
+		reset();
 	}
+}
+function updateScore(person, score){
+	document.querySelector(`.${person} p`).innerHTML = score;
+}
+function scorePlayer(){
+	++PLAYER_SCORE;
+	updateScore('score__player', PLAYER_SCORE);
+}
+
+function scoreComputer(){
+	++COMPUTER_SCORE;
+	updateScore('score__computer', COMPUTER_SCORE);
 }
 
 function game() {
 	// The computer will randomly select one of the choices.
-	function computerPlay() {
-		return choice[Math.floor(Math.random() * 3)];
-	}
+	
 	const computerSelection = computerPlay();
 
 	playRound(playerSelection, computerSelection);
@@ -114,9 +106,6 @@ function reset() {
 	computerScore = 0;
 	containerScorePlayer.innerHTML = playerScore;
 	containerScoreComp.innerHTML = computerScore;
-	containerPicks.innerHTML = '';
-	containerPlayer.innerHTML = '';
-	containerComp.innerHTML = '';
 	resetContainer.classList.remove('reset__fade-in');
 	resetContainer.classList.add('reset__fade-out');
 }
