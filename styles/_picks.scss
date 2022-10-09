@@ -33,6 +33,17 @@
 	justify-content: space-between;
 	width: 90%;
 	max-width:577px;
+	& img {
+		cursor: pointer;
+		
+		&:hover {
+			animation: swing linear 1.5s infinite;
+		}
+
+		&:focus {
+			animation: shake linear .5s;
+		}
+	}
 	@media screen and (max-width: 499px) {
 		flex-wrap: wrap;
 		&__choice:last-child {
