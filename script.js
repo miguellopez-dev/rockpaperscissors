@@ -1,5 +1,5 @@
-let PLAYER_SCORE = 4;
-let COMPUTER_SCORE = 4;
+let PLAYER_SCORE = 0;
+let COMPUTER_SCORE = 0;
 
 //Player takes their pick
 function DISPLAY(text) {
