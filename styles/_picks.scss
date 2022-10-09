@@ -23,10 +23,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 50%;
-	@media screen and (max-width: 650px) {
+	width: 90%;
+	max-width:577px;
+	@media screen and (max-width: 499px) {
 		flex-wrap: wrap;
-		width: 70%;
 		&__choice:last-child {
 			margin: auto;
 		}
